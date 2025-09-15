@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+
+.container {
+    position: relative;
+    border: 5px solid black;
+    width: 500px;
+    height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #f8f8f8;
+}
+
+
+/* ---iphoneSection----------------- */
+
+.iphoneSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.iphoneSection .left {
+    flex: 1;
+    text-align: left;
+}
+
+.iphoneSection .center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.iphoneSection .center #spn {
+    width: 150px;
+    height: 20px;
+    background: black;
+    border-radius: 20px;
+    display: block;
+}
+
+.iphoneSection .right {
+    flex: 1;
+    text-align: right;
+}
+
+
+
+
+/* ------------headerSection-------------- */
+.container .hearSection
+{
+    width: 100%;
+    height: 70px;
+    background: rgb(20, 175, 236);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.hearSection i
+{
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container .mainPart
+{
+    margin: 10px 20px;
+}
+
+
+/* ---------------imgSection------------- */
+
+.container .imgSection 
+{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.imgSection #img
+{
+    width: 100%;
+    height: 100%;   
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.costSection
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.costSection .name
+{
+    display: flex;
+    align-items: center;
+}
+
+.name,#cost,#likes
+{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+#cost
+{
+    margin-left: 10px;
+}
+.citySection
+{
+    margin-bottom: 10px;
+}
+
+.ratingSection
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ratingSection #rating
+{
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.ratingSection .range
+{
+    position: relative;
+    width: 200px;
+    height: 10px;
+    background: lightgrey;
+    border-radius: 10px;
+}
+
+.range::before
+{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: orangered;
+    border-radius: 10px;
+    animation: animate 3s linear forwards;
+}
+
+@keyframes animate {
+    0%{
+        width: 0;
+    }
+    100%
+    {
+        width: 70%;
+    }
+}
+
+
+.ingredientsSection h3
+{
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.ingredientsSection p
+{
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.description h3
+{
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-bottom: 5px;
+}
+
+.description p
+{
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+.buttons
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btn1,#btn2
+{
+    text-align: center;
+    line-height: 40px;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: black;
+}
+
+#btn1
+{
+    background: orange;
+    width: 50%;
+    height: 40px;
+}
+
+#btn2
+{
+    background: lightgrey;
+    width: 50%;
+    height: 40px;   
+}
+
+@media screen and (max-width: 500px) { 
+  .container .imgSection {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 10px;
+  }
+
+  .imgSection #img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  .ratingSection #rating
+  {
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .ratingSection .range {
+    position: relative;
+    width: 150px; /* fixed typo here */
+    height: 10px;
+    background: lightgrey;
+    border-radius: 10px;
+  }
+
+  .range::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: orangered;
+    border-radius: 10px;
+    animation: animate 3s linear forwards;
+  } 
+}
+
+@media screen and (min-width: 778px) {
+  .container .imgSection {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+
+  .imgSection #img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+}
+
+

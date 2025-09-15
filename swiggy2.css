@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: relative;
+    border: 5px solid black;
+    width: 500px;
+    height: 700px;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #f8f8f8;
+}
+
+
+/* ---iphoneSection----------------- */
+
+.iphoneSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.iphoneSection .left {
+    flex: 1;
+    text-align: left;
+}
+
+.iphoneSection .center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.iphoneSection .center #spn {
+    width: 150px;
+    height: 20px;
+    background: black;
+    border-radius: 20px;
+    display: block;
+}
+
+.iphoneSection .right {
+    flex: 1;
+    text-align: right;
+    cursor: pointer;
+}
+
+
+/* ------------tittleSection------------- */
+
+.container .tittleSection
+{
+    position: static;
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background: rgb(20, 175, 236);
+    margin-bottom: 10px;
+}
+
+.tittleSection i,h3
+{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.tittleSection i
+{
+    font-size: 21px;
+    position: relative;
+    cursor: pointer;
+}
+
+.tittleSection h3
+{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+
+.tittleSection i::before
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.MainSection
+{
+    margin: 10px 20px;
+    /* background-color: red; */
+    overflow: hidden;
+}
+
+/* ----------inputSection----------- */
+
+.container .inputSection
+{
+    position: relative;
+    /* border: 2px solid green; */
+    max-width: 450px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.inputSection #searchInput
+{
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: lightgrey;
+    color: #333;
+    padding-left: 30px;
+}
+
+.inputSection i
+{
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 20px;
+    transform: translate(-50%,-50%);
+    color: #333;
+}
+
+/* --------------navSection------------ */
+.navbarSection
+{
+    margin-bottom: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;  
+}
+
+.navbarSection ul
+{
+    display: flex;
+}
+
+.navbarSection ul li
+{
+    list-style: none;
+    margin-right: 35px;
+    /* margin-left: 2px; */
+}
+
+.navbarSection a.active {
+    color: blue;
+}
+
+
+.navbarSection a
+{
+    max-width: 100%;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: black;
+}
+
+/* ------------mainSection--------------- */
+
+.FoodSection 
+{
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 20px;
+    width: 100%;
+    height: 470px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 10px;
+}
+
+.FoodSection .images 
+{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.images img {
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.images .imagesTitle h3 
+{
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: sans-serif;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.footerSection
+{
+    width: 100%;
+    height: 40px;
+    background: rgb(255, 149, 167) ;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.footerSection:hover
+{
+    background: rgb(245, 165, 179);
+}
+
+.footerSection a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+ /* 🔹 Media Queries (Responsive) */
+
+@media (max-width: 600px)
+{
+      .container {
+        width: 95%;
+        height: auto;
+}
+
+    .FoodSection
+    {
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+    }
+
+    .FoodSection .images 
+    {
+        width: 100%;
+        height: 180px;
+    }
+}
+
+@media (max-width: 400px)
+{
+    .container
+    {
+        width: 95%;
+        height: 600px;
+        scroll-behavior: smooth;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+      .FoodSection {
+        grid-template-columns: 1fr;
+    }
+
+    .FoodSection .images {
+        height: 160px;
+    }
+
+      .titleSection h3 {
+        font-size: 18px;
+      }
+}
+
+
+
+

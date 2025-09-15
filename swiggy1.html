@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+   <link rel="stylesheet" href="swiggy1.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="iphoneSection">
+            <div class="left">9:30</div>
+            <div class="center">
+                <div id="spn"></div>
+            </div>
+            <div class="right">
+                <i class="fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-battery-full"></i>
+            </div>
+            
+        </div>
+        <h3>WELCOME HOME</h3>
+        <h2>FOOD  DELIVERY</h2>
+
+    <div class="input-text">
+        <input type="text" id="input1" required>
+        <label id="label1">Username</label>
+        <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div class="input-text">
+        <input type="password" id="input2" required>
+        <label id="label2">Password</label>
+        <span class="toggle-password" id="togglePassword1">
+                    &#128065; </span>
+        <i class="fa-solid fa-lock"></i>
+    </div>
+
+     <div class="input-text">
+        <input type="password" id="input3" required>
+        <label id="label3">Confirm Password</label>
+        <span class="toggle-password" id="togglePassword2">
+                    &#128065; </span>
+        <i class="fa-solid fa-lock"></i>
+    </div>
+
+    <div class="button">
+        <button id="Login">Confirm</button>
+    </div>
+
+    <div id="message"></div>
+
+
+
+
+    <script>
+      const input1 = document.getElementById('input1');
+        const input2 = document.getElementById('input2')
+        const label1 = document.getElementById('label1');
+        const label2 = document.getElementById('label2');
+
+        // translate label
+        input1.addEventListener('focus', () => {
+            label1.style.transform = 'translateY(-35px)';
+            label1.style.fontSize = '14px';
+            label1.style.color = '#4a90e2';
+        });
+
+        input1.addEventListener('blur', () => {
+            if (input1.value === "") {
+                label1.style.transform = 'translateY(0)';
+                label1.style.fontSize = '16px';
+                label1.style.color = '#777';
+            }
+        });
+
+         // translate label
+        input2.addEventListener('focus', () => {
+            label2.style.transform = 'translateY(-35px)';
+            label2.style.fontSize = '14px';
+            label2.style.color = '#4a90e2';
+        });
+
+        input2.addEventListener('blur', () => {
+            if (input2.value === "") {
+                label2.style.transform = 'translateY(0)';
+                label2.style.fontSize = '16px';
+                label2.style.color = '#777';
+            }
+        });
+
+
+        input3.addEventListener('focus', () => {
+            label3.style.transform = 'translateY(-35px)';
+            label3.style.fontSize = '14px';
+            label3.style.color = '#4a90e2';
+        });
+
+        input3.addEventListener('blur', () => {
+            if (input3.value === "") {
+                label3.style.transform = 'translateY(0)';
+                label3.style.fontSize = '16px';
+                label3.style.color = '#777';
+            }
+        });
+
+        // change to closed eyes
+        const toggle1 = document.getElementById("togglePassword1");
+        const toggle2 = document.getElementById("togglePassword2");
+
+        toggle1.addEventListener("click", () => {
+        if (input2.type === "password") {
+            input2.type = "text";          
+            toggle.textContent = "🙈"; // change to closed eyes
+        } 
+        else {
+            input2.type = "password";      
+            toggle.textContent = "👁️"; 
+        }
+        });
+
+        toggle2.addEventListener("click", () => {
+        if (input3.type === "password") {
+            input3.type = "text";          
+            toggle.textContent = "🙈"; // change to closed eyes
+        } 
+        else {
+            input3.type = "password";      
+            toggle.textContent = "👁️"; 
+        }
+        });
+
+        // clicking login button
+        const LoginBtn = document.getElementById('Login');
+        const Message = document.getElementById('message');
+
+        LoginBtn.addEventListener('click',()=> {
+
+            const user = input1.value.trim();
+            const pass1 = input2.value.trim();
+            const pass2 = input3.value.trim();
+
+            if(user != '' && pass1 != '' && pass2 != '')
+            {
+               Message.textContent = 'Success';
+               Message.style.color = 'green';
+            }
+            else
+            {
+                Message.textContent ='Enter Details';
+                Message.style.color = 'red';
+            }
+          })
+
+            
+
+    </script>
+
+
+
+</body>
+</html>

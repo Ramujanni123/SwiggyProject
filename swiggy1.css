@@ -1,0 +1,243 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container
+{
+    position: relative;
+    border: 5px solid black;
+    width: 500px;
+    height: 600px;
+    background: rgb(248, 220, 220);
+    border-radius: 30px;
+    padding: 20px 50px;
+}
+
+
+.iphoneSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.iphoneSection .left {
+    flex: 1;
+    text-align: left;
+}
+
+.iphoneSection .center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.iphoneSection .center #spn {
+    width: 150px;
+    height: 20px;
+    background: black;
+    border-radius: 20px;
+    display: block;
+}
+
+.iphoneSection .right {
+    flex: 1;
+    text-align: right;
+}
+
+.container h3,h2
+{
+    text-align: center;
+}
+
+.container h3
+{
+    margin-top: 50px;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+.container h2
+{
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: rgb(245, 66, 66);
+    padding-bottom: 80px;
+}
+
+.input-text {
+  position: relative;
+  width: 400px;
+  margin-bottom: 40px;
+}
+
+.input-text input {
+  width: 100%;
+  padding: 15px 25px;
+  font-size: 16px;
+  border: 2px solid brown;
+  border-radius: 30px;
+  outline: none;
+  background: white;
+}
+
+.input-text i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.input-text #togglePassword1, #togglePassword2
+{
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+
+.input-text label {
+  position: absolute;
+  top: 17px;
+  left: 0;
+  padding-left: 25px;
+  color: #777;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+
+.container .forgot_pass
+{
+    width: 100%;
+    /* background: red; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+}
+
+.forgot_pass label input
+{
+    cursor: pointer;
+}
+
+.forgot_pass a
+{
+    margin-left: 5px;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s ease;
+}
+
+.forgot_pass a:hover
+{
+    text-decoration: underline;
+    color: red;
+}
+
+.button 
+{
+    margin-top: 20px;
+}
+
+
+.button #Login
+{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: orangered;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.button #Login:hover
+{
+    background: rgb(247, 91, 35);
+}
+
+#message
+{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: 200;
+    color: green;
+}
+
+
+@media (max-width: 400px) {
+  .container {
+    width: 95%;
+    height: auto;
+  }
+
+  .input-text {
+    position: relative;
+    width: auto;
+}
+
+    .input-text input {
+      width: 95%;
+    }
+}
+
+@media (max-width: 572px) {
+  .container {
+    width: 95%;
+    height: auto;
+  }
+
+  .input-text {
+    position: relative;
+    width: auto;
+}
+
+    .input-text input {
+      width: 95%;
+    }
+
+    .input-text i {
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      transform: translateY(-50%);
+    }   
+    
+    .input-text #togglePassword1, #togglePassword2
+    {
+        position: absolute;
+        top: 50%;
+        right: 50px;
+        transform: translate(-50%,-50%);
+    }
+}

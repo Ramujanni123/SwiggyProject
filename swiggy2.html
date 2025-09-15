@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="swiggy2.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="iphoneSection">
+            <div class="left">9:30</div>
+            <div class="center">
+                <div id="spn"></div>
+            </div>
+            <div class="right">
+                <i class="fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-battery-full"></i>
+            </div>
+            
+        </div>
+        <div class="tittleSection">
+            <i class="fa-solid fa-user"></i>
+            <h3>Ram Janni</h3>
+        </div>
+        
+    <section class="MainSection">
+        <div class="inputSection">
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search"  id="searchInput">
+            <!-- ---------------------------->
+             <!-- micSection -->
+        </div>
+        <div class="navbarSection">
+            <ul id="foodList">
+                <li><a href="#" class="active">All</a></li>
+                <li><a href="#">Pizza</a></li>
+                <li><a href="#">Pasta</a></li>
+                <li><a href="#">Burger</a></li>
+                <li><a href="#">SandWich</a></li>
+                <li><a href="#">Juice</a></li>
+            </ul>
+        </div>
+
+        <div class="FoodSection">
+            <div class="images">
+                <img src="pasta.jpg" id="img">
+                <div class="imagesTitle">
+                    <h3>Pasta</h3>
+                </div>
+            </div>
+
+             <div class="images">
+                <img src="burger.png" id="img">
+                <div class="imagesTitle">
+                    <h3>Burger</h3>
+                </div>
+            </div>
+
+             <div class="images">
+                <img src="sandwich.jpg" id="img">
+                <div class="imagesTitle">
+                    <h3>Sandwich</h3>
+                </div>
+            </div>
+
+            <div class="images">
+                <img src="pepsi.jpg" id="img1">
+                <div class="imagesTitle">
+                    <h3>Pepsi</h3>
+                </div>
+            </div>
+
+            <div class="images">
+                <img src="pizza.webp" id="img2">
+                <div class="imagesTitle">
+                    <h3>Mini pizza</h3>
+                </div>
+            </div>
+
+            <div class="images">
+                <img src="pizza1.jpg" id="img2">
+                <div class="imagesTitle">
+                    <h3>Chicken pizza</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footerSection">
+            <a href="#">Order Now</a>
+        </div>
+        </div>
+    </section>
+
+    <script>
+        const navLinks = document.querySelectorAll('.navbarSection a');
+        const searchInput = document.getElementById('searchInput');
+        const foodList = document.querySelectorAll('#foodList .foodItem'); // Assuming each food item has a class "foodItem"
+        const images = document.querySelectorAll('.images');
+        const nameElements = document.getElementsByTagName('h3');
+
+        console.log(nameElements);
+        console.log(images);
+
+        // Handle navigation link activation
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+
+
+    </script>
+</body>
+</html>

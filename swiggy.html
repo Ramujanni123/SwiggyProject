@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="swiggy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="iphoneSection">
+            <div class="left">9:30</div>
+            <div class="center">
+                <div id="spn"></div>
+            </div>
+            <div class="right">
+                <i class="fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-battery-full"></i>
+            </div>
+            
+        </div>
+        
+        <h3>WELCOME HOME</h3>
+        <h2>Swiggy</h2>
+
+    <div class="input-text">
+        <input type="text" id="input1" required>
+        <label id="label1">Username</label>
+        <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div class="input-text">
+        <input type="password" id="input2" required>
+        <label id="label2">Password</label>
+        <span class="toggle-password" id="togglePassword">
+                    &#128065; </span>
+        <i class="fa-solid fa-lock"></i>
+    </div>
+
+    <div class="forgot_pass">
+    <label>
+        <input type="checkbox" id="remember">
+        Remember me
+    </label>
+    <a href="swiggy1.html" id="forgot">Forgot Password?</a>
+    </div>
+
+    <div class="button">
+        <button id="Login">Login</button>
+    </div>
+
+    <div class="loader" id="loader"></div>
+    <div class="message" id="loginMessage"></div>
+
+
+    </div>
+
+
+    <script>
+
+        const input1 = document.getElementById('input1');
+        const input2 = document.getElementById('input2')
+        const label1 = document.getElementById('label1');
+        const label2 = document.getElementById('label2');
+
+        // translate label
+        input1.addEventListener('focus', () => {
+            label1.style.transform = 'translateY(-35px)';
+            label1.style.fontSize = '14px';
+            label1.style.color = '#4a90e2';
+        });
+
+        input1.addEventListener('blur', () => {
+            if (input1.value === "") {
+                label1.style.transform = 'translateY(0)';
+                label1.style.fontSize = '16px';
+                label1.style.color = '#777';
+            }
+        });
+
+         // translate label
+        input2.addEventListener('focus', () => {
+            label2.style.transform = 'translateY(-35px)';
+            label2.style.fontSize = '14px';
+            label2.style.color = '#4a90e2';
+        });
+
+        input2.addEventListener('blur', () => {
+            if (input2.value === "") {
+                label2.style.transform = 'translateY(0)';
+                label2.style.fontSize = '16px';
+                label2.style.color = '#777';
+            }
+        });
+
+        // change to closed eyes
+        const toggle = document.getElementById("togglePassword");
+
+        toggle.addEventListener("click", () => {
+        if (input2.type === "password") {
+            input2.type = "text";          
+            toggle.textContent = "🙈"; // change to closed eyes
+        } else {
+            input2.type = "password";      
+            toggle.textContent = "👁️"; e
+        }
+        });
+
+        // clicking login button
+        const LoginBtn = document.getElementById('Login');
+        const loader = document.getElementById('loader');
+        const loginMessage = document.getElementById('loginMessage');
+
+        LoginBtn.addEventListener('click',()=> {
+
+            const user = input1.value.trim();
+            const pass = input2.value.trim();
+
+            if (user === "" || pass === "") {
+                alert('Please enter both Username and Password');
+            }
+
+            //correct username and password
+            if(user === "RamJanni" && pass === "Ram@123")
+            {
+                loginMessage.style.display = 'none';
+                loginMessage.textContent = '';
+
+                loader.style.display = 'block';
+                LoginBtn.disabled = true;
+
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    LoginBtn.disabled = false;
+
+                    loginMessage.textContent = 'Login success';
+                    loginMessage.style.color = 'green';
+                    loginMessage.style.display = 'block';
+                }, 2000);
+            }
+            else
+            {
+                loginMessage.style.display = 'none';
+                loginMessage.textContent = '';
+
+                loader.style.display = 'block';
+                LoginBtn.disabled = true;
+
+                setTimeout(() => {
+                loader.style.display = 'none';
+                LoginBtn.disabled = false;
+                loginMessage.textContent = 'Login failed';
+                loginMessage.style.color = 'red';
+                loginMessage.style.display = 'block';
+
+                input1.style.borderColor = 'red';
+                input2.style.borderColor = 'red';
+                }, 2000);
+            }
+
+            if(user === "RamJanni" && pass !== "Ram@123")
+            {
+
+                loginMessage.style.display = 'none';
+                loginMessage.textContent = '';
+
+                loader.style.display = 'block';
+                LoginBtn.disabled = true;
+
+                setTimeout(() => {
+                loader.style.display = 'none';
+                LoginBtn.disabled = false;
+                loginMessage.textContent = 'Login Fail';
+                loginMessage.style.display = 'block';
+
+                    
+                input1.style.borderColor = 'green';
+                input2.style.borderColor = 'red';
+                }, 2000);
+            }
+
+            else if(pass === 'Ram@123' && user!== "RamJanni")
+            {
+                loginMessage.style.display = 'none';
+                loginMessage.textContent = '';
+
+                loader.style.display = 'block';
+                LoginBtn.disabled = true;
+
+                setTimeout(() => {
+                loader.style.display = 'none';
+                LoginBtn.disabled = false;
+                loginMessage.textContent = 'Login Fail';
+                loginMessage.style.display = 'block';
+
+                    
+                input1.style.borderColor = 'red';
+                input2.style.borderColor = 'green';
+                }, 2000);
+            }
+            
+        })
+
+    </script>
+</body>
+</html>
